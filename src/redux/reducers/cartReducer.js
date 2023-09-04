@@ -9,6 +9,7 @@ const inital = {
     applayCoupon: [],
 }
 const cartReducer = (state = inital, action) => {
+    console.log(state)
     switch (action.type) {
         case ADD_TO_CART:
             return {

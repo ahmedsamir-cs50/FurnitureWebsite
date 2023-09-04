@@ -14,9 +14,7 @@ const AddtoCart = (productId) => {
   const Dispatch=useDispatch()
   const colorClick = (index, color) => {
     setIndexColor(index)
-    console.log(indexColor)
     setColor(color)
-    console.log(color)
   }
   const handleIncrese=(e)=>{
 e.preventDefault();
@@ -40,7 +38,7 @@ setQty((qty)=>qty-1)
         color:color
     }))
     setLoading(false)
-    setShowCart(true)
+   
   }else{
       notify("please login first","warn")
     }
@@ -51,7 +49,7 @@ setQty((qty)=>qty-1)
     if(loading ===false) 
     if(res)
     console.log(res)
-
+    notify("success","success")
   }, [loading])
   
   return [qty,color,indexColor,showCart,colorClick,handleIncrese,handleDecrease,handleCartClick,handleClose]

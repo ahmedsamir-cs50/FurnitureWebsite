@@ -29,8 +29,10 @@ export const App = () => {
     <div className='project-wrapper'>
        <BrowserRouter>
        
-     {showSearch ?<SearchComponent HandleClose={HandleClose}/> :<NavBar HandleClick={HandleClick} />}  
-       <Routes>
+     {showSearch ?<SearchComponent HandleClose={HandleClose}/> :
+     <>
+     <NavBar HandleClick={HandleClick} />
+     <Routes>
    
     <Route index element={<HomePage/>}/>
     <Route path='/login' element={<LoginPage/>}/>
@@ -44,6 +46,9 @@ export const App = () => {
     <Route path='/userpage' element={<UserPage />}/>    
    
     </Routes>
+    </>
+     }  
+       
     <Footer/>
     </BrowserRouter>
   </div>

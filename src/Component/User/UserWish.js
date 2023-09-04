@@ -16,7 +16,7 @@ const UserWish = ({item}) => {
     const [handleDeleteClick]=DeleteWishItem(wishid)
   return (
     <div className="cart-item d-flex flex-row justify-content-start">
-          <img   src={alter} alt=""></img>
+          <img   src={`http://127.0.0.1:8000/products/${item?.product?.imageCover}`} alt=""></img>
           <div style={{width:"69%"}}>
             <div className=" p-2 ms-2 d-flex flex-row justify-content-between">
               <div className="product-name ">{item?.title}</div>
