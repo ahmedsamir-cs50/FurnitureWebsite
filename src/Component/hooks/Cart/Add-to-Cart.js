@@ -16,6 +16,10 @@ const AddtoCart = (productId) => {
     setIndexColor(index)
     setColor(color)
   }
+  const handleCheckClick=(e)=>{
+    e.preventDefault()
+    setShowCart(false)
+  }
   const handleIncrese=(e)=>{
 e.preventDefault();
 setQty((qty)=>qty+1)
@@ -54,7 +58,7 @@ setQty((qty)=>qty-1)
     setLoading("")
   }, [loading])
   
-  return [qty,color,indexColor,showCart,colorClick,handleIncrese,handleDecrease,handleCartClick,handleClose]
+  return [qty,color,indexColor,showCart,colorClick,handleIncrese,handleDecrease,handleCartClick,handleClose,handleCheckClick]
 }
 
 export default AddtoCart

@@ -5,11 +5,14 @@ import close from '../../images/Assets/close.png'
 import { useEffect } from "react";
 import { useState } from "react";
 import ClearCart from "../hooks/Cart/ClearCart";
+import { Link } from "react-router-dom";
 
-export const Cart = ({handleclose}) => {
+export const Cart = ({handleclose,handleCheckClick}) => {
   const [CartItems ]=GetUserCart();
   const [handleClearClick,clearCart]=ClearCart()
-  console.log(clearCart)
+  console.log(CartItems)
+  let id=CartItems?._id;
+  
  
   return (
     <>
@@ -34,6 +37,14 @@ export const Cart = ({handleclose}) => {
         >
           CLEAR CART
         </button>
+        <Link to={`/checkOut/${id}`}>
+        <button
+         onClick={handleCheckClick}
+          className='btn btn-dark ms-3 mt-2 p-2'
+          style={{ width: "90%", letterSpacing: "3px", borderRadius: "0" }}
+        >
+          PROCEED TO CHECKOUT
+        </button></Link>
       </>
     ) : (
       <h6 className="text-center">Your Cart is Empty</h6>

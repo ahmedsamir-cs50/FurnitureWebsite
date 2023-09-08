@@ -8,7 +8,7 @@ import { ToastContainer,toast } from 'react-toastify'
 
 const ProductDetails = ({Data}) => {
   let productId=Data?.id
- const [qty,color,indexColor,showCart,colorClick,handleIncrese,handleDecrease,handleCartClick,handleclose]=AddtoCart(productId)
+ const [qty,color,indexColor,showCart,colorClick,handleIncrese,handleDecrease,handleCartClick,handleclose,handleCheckClick]=AddtoCart(productId)
  
   const [handleWishClick]=ADDTOWISHLIST(productId)
   return (
@@ -55,7 +55,7 @@ const ProductDetails = ({Data}) => {
    </div>
     </Col>
     
-    { showCart? <Cart handleclose={handleclose}/> : null}
+    { showCart? <Cart handleclose={handleclose} handleCheckClick={handleCheckClick}/> : null}
     <ToastContainer/>
     </>
   )

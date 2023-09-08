@@ -15,6 +15,8 @@ import { CategoryPage } from './Pages/Category/CategoryPage'
 import { ProductsPage } from './Pages/Products/ProductsPage'
 import ProductPage from './Pages/Products/ProductPage'
 import UserPage from './Pages/User/UserPage'
+import checkOutPage from './Pages/CheckOut/checkOutPage'
+import CheckOutPage from './Pages/CheckOut/checkOutPage'
 export const App = () => {
   const [showSearch, setShowSearch] = useState();
   const HandleClick=()=>{
@@ -48,6 +50,7 @@ export const App = () => {
     <Route path='/products/category/:id' element={<ProductsPage/>}/>    
     <Route path='product/:id' element={<ProductPage />}/>    
     <Route path='/userpage' element={<UserPage />}/>    
+    <Route path='/checkOut/:id' element={< CheckOutPage />}/>    
    
     </Routes>
     </>
