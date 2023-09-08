@@ -22,7 +22,7 @@ const onChangeName = (event) => {
 //when image change save it 
 const onImageChange = (event) => {
   if (event.target.files && event.target.files[0]) {
-      console.log(event.target.files[0])
+     
       setImage(URL.createObjectURL(event.target.files[0]))
       setSelectedFile(event.target.files[0])
   }
@@ -33,7 +33,7 @@ const res = useSelector(state => state.allCategory.category)
 const handelSubmit = async (event) => {
   event.preventDefault();
   if (Name === "" || selectedFile === null) {
-      console.log('من فضلك اكمل البيانات')
+      
       notify('من فضلك اكمل البيانات', "warn");
       return;
   }
@@ -51,7 +51,7 @@ useEffect(() => {
     setImage()
       setName("")
       setSelectedFile(null)
-      console.log('done ')
+    
       setLoading(true)
       setTimeout(() => setIsPress(false), 1000)
 

@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import { getProductWishList, removeProductToWishList } from '../../../redux/actions/wishListAction'
 
 const DeleteWishItem = (id) => {
-    console.log(id)
+  
     const Dispatch=useDispatch();
     const [loading,setloading]= useState()
   const handleDeleteClick=async()=>{
@@ -23,7 +23,7 @@ if(res)
 setTimeout(() => {
   window.location.reload(true);
 }, 500);
-console.log(res.data)
+
   }, [loading])
   return[handleDeleteClick]
 }

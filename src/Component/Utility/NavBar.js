@@ -19,7 +19,7 @@ export const NavBar = ({HandleClick}) => {
   const [user, setUser] = useState("");
   const [showCart,setShowCart]=useState(false);
   const handlebagclick=()=>{
-    console.log(user)
+ 
     if (user !== ""){
     setShowCart(!showCart)}
     else{

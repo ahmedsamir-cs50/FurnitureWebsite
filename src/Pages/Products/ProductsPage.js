@@ -9,7 +9,7 @@ export const ProductsPage=()=>{
 
   const [handleChangeSort,Data]=SortHook()
 
-  console.log(Data);
+
     const options = [
         'Best Selling', 'Price low to high', 'Price high to low',
       ];

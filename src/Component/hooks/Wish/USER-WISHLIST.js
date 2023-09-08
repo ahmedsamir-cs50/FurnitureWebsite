@@ -25,7 +25,7 @@ const get = async () => {
         if(loading===false) 
         if(res)
         setWishItems(res?.data)
-        console.log(res.data)
+        //(res.data)
     }, [loading])
     
     

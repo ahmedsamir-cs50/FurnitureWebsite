@@ -59,7 +59,7 @@ export const getAllCategoryPage = (page) => async (dispatch) => {
 export const createCategory = (formData) => async (dispatch) => {
     try {
         const response = await useInsertDataWithImage(`/api/v1/categories`, formData);
-        console.log(response)
+        //(response)
         dispatch({
             type: CREATE_CATEGORY,
             payload: response,
@@ -67,7 +67,7 @@ export const createCategory = (formData) => async (dispatch) => {
         })
 
     } catch (e) {
-        console.log(e)
+        //(e)
         dispatch({
             type: GET_ERROR,
             payload: "Error " + e,

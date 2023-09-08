@@ -27,7 +27,7 @@ export const createNewUser = (data) => async (dispatch) => {
 export const loginUser = (data) => async (dispatch) => {
     try {
         const response = await useInsertData(`/api/v1/auth/login`, data);
-        console.log(response)
+        //(response)
         dispatch({
             type: LOGIN_USER,
             payload: response,
@@ -123,7 +123,7 @@ export const resetPassword = (data) => async (dispatch) => {
 export const updateUserProfileData = (body) => async (dispatch) => {
     try {
         const response = await useInsUpdateData(`/api/v1/users/updateMe`, body);
-        console.log(response)
+        //(response)
         dispatch({
             type: UPDATE_USER_PROFILE,
             payload: response,
@@ -143,7 +143,7 @@ export const updateUserProfileData = (body) => async (dispatch) => {
 export const updateUserPassword = (body) => async (dispatch) => {
     try {
         const response = await useInsUpdateData(`/api/v1/users/changeMyPassword`, body);
-        console.log(response)
+        //(response)
         dispatch({
             type: UPDATE_USER_PASSWORD,
             payload: response,

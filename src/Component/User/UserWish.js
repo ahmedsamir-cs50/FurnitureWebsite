@@ -4,19 +4,19 @@ import alter from '../../images/Logos/tp_icon_made-in-usa_180x.webp'
 import DeleteWishItem from '../hooks/Wish/Delete-WishItem'
 
 const UserWish = ({item}) => {
-  console.log(item)
-  const[wishid,setWishId]=useState('')
 
+  const[wishid,setWishId]=useState('')
+console.log(item)
  useEffect(() => {
   if(item)
   setWishId(item._id)
  }, [])
  
-   console.log(wishid)
+  
     const [handleDeleteClick]=DeleteWishItem(wishid)
   return (
-    <div className="cart-item d-flex flex-row justify-content-start">
-          <img   src={`http://127.0.0.1:8000/products/${item?.product?.imageCover}`} alt=""></img>
+    <div className="my-3 cart-item d-flex flex-row justify-content-start">
+          <img   src={`http://127.0.0.1:8000/products/${item?.imageCover}`} alt=""></img>
           <div style={{width:"69%"}}>
             <div className=" p-2 ms-2 d-flex flex-row justify-content-between">
               <div className="product-name ">{item?.title}</div>
@@ -26,7 +26,7 @@ const UserWish = ({item}) => {
                 
 
                 <div >
-                <p className="my-auto">
+                <p className="my-auto ms-1">
                   Price:<span>{item?.price}</span>
                   <span>L.E</span>
                   

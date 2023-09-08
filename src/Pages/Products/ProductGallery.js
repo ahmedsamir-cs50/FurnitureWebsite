@@ -12,9 +12,9 @@ const ProductGallery = ({Data}) => {
   useEffect(() => {
     setMainImage(Data?.images[0])
   }, [Data])
-  console.log(Data?.images[0])
+
   const handleMainImage = (e) => {
-    console.log(e.target.currentSrc)
+ 
     setMainImage(e.target.currentSrc)
   }
 

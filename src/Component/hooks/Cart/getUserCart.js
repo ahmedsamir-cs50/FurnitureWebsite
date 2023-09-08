@@ -6,8 +6,8 @@ import ModifyCartItem from './Modify-Cart-Item'
 
 const GetUserCart = () => {
     const  [, , , ,LoadingUpdate,LoadingDelete,id]=ModifyCartItem()
-const Dispatch=useDispatch()
-const [loading,setLoading]=useState(true)
+const Dispatch= useDispatch()
+const [loading,setLoading]=useState()
 const [CartItems,setCartItems]=useState()
 const [ItemsNum,setItemsNum]=useState()
 const [TotalCartPrice,setTotalCartPrice]=useState()
@@ -33,9 +33,10 @@ const get = async () => {
         setItemsNum(res.numOfCartItems)
         setTotalCartPrice(res.data?.totalCartPrice)
         setCartID(res.data?._id)
-        console.log("hello from use effect") 
+      
         setCartItems(res?.data)
-        console.log(res?.data)
+        console.log(res)
+      
     }, [loading])
     
     

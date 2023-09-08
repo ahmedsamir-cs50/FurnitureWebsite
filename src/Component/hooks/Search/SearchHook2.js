@@ -58,7 +58,7 @@
 //     const sortData = () => {
 //         const sortWord = localStorage.getItem("sortValue");
         
-//        console.log(sortWord);
+//        //(sortWord);
 //         switch (sortWord) {
 //           case "Best Selling":
 //             sortType= "-sold";

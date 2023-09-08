@@ -4,10 +4,12 @@ import GetUserCart from "../hooks/Cart/getUserCart";
 import close from '../../images/Assets/close.png'
 import { useEffect } from "react";
 import { useState } from "react";
+import ClearCart from "../hooks/Cart/ClearCart";
 
 export const Cart = ({handleclose}) => {
   const [CartItems ]=GetUserCart();
-  
+  const [handleClearClick,clearCart]=ClearCart()
+  console.log(clearCart)
  
   return (
     <>
@@ -19,18 +21,29 @@ export const Cart = ({handleclose}) => {
           <img className="close-button" src={close} onClick={handleclose} alt=""></img>
           </div>
           {
-         
+  CartItems ? (
+   !clearCart && CartItems.products?.length > 0 ? (
+      <>
+        {CartItems.products.map((item, index) => (
+          <CartItem key={index} item={item} />
+        ))}
+        <button
+          onClick={handleClearClick}
+          className='btn btn-dark ms-3 mt-5 p-2'
+          style={{ width: "90%", letterSpacing: "3px", borderRadius: "0" }}
+        >
+          CLEAR CART
+        </button>
+      </>
+    ) : (
+      <h6 className="text-center">Your Cart is Empty</h6>
+    )
+  ) : (
+    <h5 className="text-center">loading</h5>
+  )
+}
             
-            CartItems?(
-              CartItems.products?.map((item, index) => {
-                return (
-                  <CartItem key={index} item={item}/>
-                );
-              })
-            ):<h5>loading</h5>
-            
-          }
-          
+
           </div>
         
        

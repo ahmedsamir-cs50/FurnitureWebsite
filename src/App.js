@@ -24,12 +24,16 @@ export const App = () => {
     setShowSearch(false);  
     
   }
+  const handleSearchCardClick=()=>{
+    setShowSearch(false);  
+    
+  }
   return (
    
     <div className='project-wrapper'>
        <BrowserRouter>
        
-     {showSearch ?<SearchComponent HandleClose={HandleClose}/> :
+     {showSearch ?<SearchComponent HandleClose={HandleClose} handleSearchCardClick={handleSearchCardClick}/> :
      <>
      <NavBar HandleClick={HandleClick} />
      <Routes>

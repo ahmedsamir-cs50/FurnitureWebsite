@@ -4,8 +4,9 @@ import close from '../../images/close-svgrepo-com.svg'
 import { useState } from 'react';
 import { SearchHook } from '../hooks/Search/SearchHook';
 import {CategoryCard} from '../Category/CategoryCard'
+import ProductsContainer from '../Products/ProductsContainer'
 
-const SearchComponent = ({HandleClose}) => {
+export const SearchComponent = ({HandleClose,handleSearchCardClick}) => {
    
     // const [handleSearchWord,Data]=SearchHook();
     const [handleSearchWord, Data ]=SearchHook()
@@ -26,15 +27,7 @@ const SearchComponent = ({HandleClose}) => {
     </Row>
    
     <Row className=' search-result my-10 d-flex justify-content-around' style={{minHeight:"100vh"}}>
-   
-    {
-          Data? (
-            Data?.slice(0,5).map((item, index) => {
-                    return (<CategoryCard sm={6} lg={2} key={index} id={item.id} title={item.title} img={item.imageCover} />)
-                })
-            ) : <h4>Stay tuned ,,,</h4> 
-    }
-    
+                 <ProductsContainer data={Data}  handleSearchCardClick={handleSearchCardClick}/>
     </Row>
   
     </>

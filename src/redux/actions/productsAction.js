@@ -99,10 +99,10 @@ export const getAllProductsPage = (page, limit) => async (dispatch) => {
 
 //get all products with query string
 export const getAllProductsSearch = (queryString) => async (dispatch) => {
-    console.log(queryString)
+    //(queryString)
     try {
         const response = await useGetData(`/api/v1/products?${queryString}`);
-        console.log(response)
+        //(response)
         dispatch({
             type: GET_ALL_PRODUCTS,
             payload: response,
@@ -110,7 +110,7 @@ export const getAllProductsSearch = (queryString) => async (dispatch) => {
         })
 
     } catch (e) {
-        console.log(e)
+        //(e)
         dispatch({
             type: GET_ERROR,
             payload: "Error " + e,

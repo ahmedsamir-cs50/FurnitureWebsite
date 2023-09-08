@@ -43,11 +43,11 @@ const ProductDetails = ({Data}) => {
           }
     
     </div>
-    <div className="  counter-wrapper mt-4 d-flex flex-row justify-content-between" style={{width:"30%"}}>
+    {/* <div className="  counter-wrapper mt-4 d-flex flex-row justify-content-between" style={{width:"30%"}}>
                 <button onClick={handleDecrease} >-</button>
                 <div className="my-auto"  value={qty}>{qty}</div>
                 <button onClick={handleIncrese} >+</button>
-                </div>
+                </div> */}
     <button onClick={handleCartClick} className='btn btn-dark mx-auto mt-5 p-2' style={{width:"90%",letterSpacing:"3px",borderRadius:"0"} }>ADD TO CART</button>
     <button onClick={handleWishClick} className='btn btn-dark mx-auto mt-2 p-2' style={{width:"90%",letterSpacing:"3px",borderRadius:"0"} }>ADD TO WISHLIST</button>
    <div className='mt-3'>

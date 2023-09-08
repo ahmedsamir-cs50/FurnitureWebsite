@@ -56,7 +56,7 @@ setLoading(false);
         useEffect(() => {
             if (Loading === false) {
                 if (res) {
-                    console.log(res)
+                   
                     if (res.data.token) {
                         localStorage.setItem("token", res.data.token)
                         notify(" success   ", "success")

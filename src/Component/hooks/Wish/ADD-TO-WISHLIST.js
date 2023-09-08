@@ -29,7 +29,8 @@ const ADDTOWISHLIST = (productId) => {
   const res = useSelector((state) => state.addToWishListReducer.addWishList);
 
   useEffect(() => {
-    if (loading === false) if (res) console.log(res);
+    if (loading === false) if (res) 
+    notify("Added To Your WishList","success")//(res);
   }, [loading]);
 
   return [handleWishClick]

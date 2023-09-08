@@ -30,7 +30,7 @@ export const AddProductsHook = () => {
 
     getCategory();
     setCatLoading(false)
-    console.log("1")
+
   }, []);
 
   const category = useSelector(state => state.allCategory.category)
@@ -41,7 +41,7 @@ export const AddProductsHook = () => {
             setAllCategory(category.data)
            
           }
-    console.log("2")
+    
   }, 1500);
  
   
@@ -138,21 +138,16 @@ export const AddProductsHook = () => {
     setTimeout(() => {
         formData.append("imageCover", imgCover);
         itemImages.map((item) => formData.append("images", item))
-        console.log("3")
+      
     }, 1000);
 
-    setTimeout(() => {
-        console.log(imgCover)
-        console.log(itemImages)
-        console.log("4")
-    }, 1000);
+ 
     colors.map((color) => formData.append("availableColors", color))
    
     setTimeout(async () => {
         setLoading(true)
         await Dispatch(createProduct(formData))
         setLoading(false)
-        console.log("5")
     }, 1000);
 
 }
@@ -164,8 +159,6 @@ useEffect(() => {
 
     if (loading === false) {
         // setCatID(0)
-        
-        console.log("6")
         setTimeout(() => setLoading(true)
         , 1500)
 

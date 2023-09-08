@@ -10,7 +10,7 @@ export const ProductDetailsHook =(id)=>{
     const ProductDetails =async()=>{
         try{
         setLoading(true)
-        console.log(id)
+      
 await Dispatch(getOneProduct(id))
 setLoading(false)
 }catch(e){}
@@ -23,7 +23,7 @@ setLoading(false)
     useEffect(() => {
    if(loading===false) 
    if(res){
-    console.log(res)
+
    }
     }, [loading])
     Data=res.data;

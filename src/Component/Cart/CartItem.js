@@ -15,7 +15,7 @@ export const CartItem=({item})=>{
     e.preventDefault();
     if (qty !== 1) setQty((qty) => qty - 1);
   };
-  console.log(item)
+
  
  
  const  []=ModifyCartItem(item,qty)
@@ -23,7 +23,7 @@ export const CartItem=({item})=>{
  
     return(
        
-        <div className="cart-item d-flex flex-row justify-content-start">
+        <div className="cart-item my-2 d-flex flex-row justify-content-start">
           <img  className="ms-2" src={`http://127.0.0.1:8000/products/${item?.product?.imageCover}`} alt=""></img>
           <div style={{width:"69%"}}>
             <div className=" p-2 ms-2 d-flex flex-row justify-content-between">

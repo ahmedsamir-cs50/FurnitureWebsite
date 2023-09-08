@@ -1,5 +1,5 @@
 import React from "react";
-import { updateCartItem } from "../../../redux/actions/cartAction";
+import { getAllUserCartItems, updateCartItem } from "../../../redux/actions/cartAction";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -30,11 +30,7 @@ const ModifyCartItem = (item,qty) => {
     }
   }, [qty]);
   const resUpdate = useSelector((state) => state.cartReducer.updateItem);
-  useEffect(() => {
-    if (LoadingUpdate === false)
-      if (resUpdate) 
-    console.log(resUpdate?.data);
-  }, [LoadingUpdate]);
+
 
   
 

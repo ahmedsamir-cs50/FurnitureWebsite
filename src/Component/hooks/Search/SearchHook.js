@@ -41,8 +41,8 @@ export const SearchHook = () => {
   const getProduct =async()=>{
     setLoading(true);
     sortData();
-    console.log("hello from sorthook")
-    console.log(sort);
+  
+  
     await Dispatch(getAllProductsSearch(`keyword=${search}&sort=${sort}`));
     setLoading(false);
   }
@@ -54,7 +54,7 @@ export const SearchHook = () => {
   useEffect(() => {
     if (loading === false) {
       if (res) {
-        console.log(res);
+     
         setData(res.data);
         setLoading("");
       }

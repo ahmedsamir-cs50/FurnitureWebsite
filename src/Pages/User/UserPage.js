@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom'
 const UserPage = () => {
     const  [WishItems,loading]=USERWISHLIST()
     const user=JSON.parse(localStorage.getItem('user'))
-    console.log(user)
+    
     const [handleLogOut] =LogOutHook()
-    console.log(WishItems)
+  
   return (
    <Container style={{minHeight:"100vh"}}>
     <Row className='my-5'>
@@ -27,7 +27,7 @@ const UserPage = () => {
     </Card>
         </Col>
         <Col>
-       <div className='text-center'> Your WishList</div>
+       <div className='text-center my-3'> Your WishList</div>
         {
            !loading && WishItems?.length>0?(
             WishItems.map((item,index)=>{

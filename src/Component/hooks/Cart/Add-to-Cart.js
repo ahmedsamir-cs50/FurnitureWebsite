@@ -8,8 +8,8 @@ import notify from '../useNotifaction'
 const AddtoCart = (productId) => {
     const [qty,setQty] = useState(1)
   const [color,setColor] = useState("")
-  const [loading,setLoading] = useState()
-  const [indexColor,setIndexColor] =useState("")
+  const [loading,setLoading] = useState("")
+  const [indexColor,setIndexColor] =useState(0)
   const [showCart,setShowCart] =useState(false)
   const Dispatch=useDispatch()
   const colorClick = (index, color) => {
@@ -48,8 +48,10 @@ setQty((qty)=>qty-1)
   useEffect(() => {
     if(loading ===false) 
     if(res)
+   
+    notify("Item Added to Your Cart","success")
     console.log(res)
-    notify("success","success")
+    setLoading("")
   }, [loading])
   
   return [qty,color,indexColor,showCart,colorClick,handleIncrese,handleDecrease,handleCartClick,handleClose]
