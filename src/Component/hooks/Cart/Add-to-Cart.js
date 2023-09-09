@@ -19,6 +19,7 @@ const AddtoCart = (productId) => {
   const handleCheckClick=(e)=>{
     e.preventDefault()
     setShowCart(false)
+    console.log(showCart)
   }
   const handleIncrese=(e)=>{
 e.preventDefault();
