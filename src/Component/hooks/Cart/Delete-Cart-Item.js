@@ -21,7 +21,7 @@ setloading(true)
   const res= useSelector((state)=>state.cartReducer.deleteItem)
   useEffect(() => {
     if(loading === false)
-    window.location.reload(false)
+   
     setloading("")
   }, [loading])
   
