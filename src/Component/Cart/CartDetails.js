@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { CartItem } from './CartItem'
 import GetUserCart from '../hooks/Cart/getUserCart';
+import AddtoCart from '../hooks/Cart/Add-to-Cart';
 
 const CartDetails = () => {
     const [CartItems ]=GetUserCart();
+    const []=AddtoCart()
   return (
     <div className='shippingCart my-5 '>
          {

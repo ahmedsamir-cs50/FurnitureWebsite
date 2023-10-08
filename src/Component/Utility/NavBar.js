@@ -18,6 +18,7 @@ export const NavBar = ({HandleClick}) => {
   const [path, setPath] = useState();
   const [user, setUser] = useState("");
   const [showCart,setShowCart]=useState(false);
+  const [disableCart,setDisableCart]=useState(false);
   const handlebagclick=()=>{
  
     if (user !== ""){
@@ -28,6 +29,10 @@ export const NavBar = ({HandleClick}) => {
   }
   const handleclose=()=>{
     setShowCart(false)
+  }
+  const handleCheckClick=()=>{
+    setShowCart(false)
+    setDisableCart(true)
   }
   // const [showSearch, setShowSearch] = useState(false);
   // const changeNav =()=>{
@@ -113,7 +118,7 @@ export const NavBar = ({HandleClick}) => {
         <div onClick={HandleClick}>
           <img src={search} alt=""></img>
         </div>
-        <div onClick={handlebagclick}>
+        <div onClick={handlebagclick} >
           <img src={bag} alt=""></img>
         </div>
       </Col>
@@ -135,7 +140,7 @@ export const NavBar = ({HandleClick}) => {
       
     
     </Row>
-     {showCart? <Cart handleclose={handleclose}/> : null}
+     {showCart? <Cart handleclose={handleclose} handleCheckClick={handleCheckClick}/> : null}
      <ToastContainer/>
      </>
   );

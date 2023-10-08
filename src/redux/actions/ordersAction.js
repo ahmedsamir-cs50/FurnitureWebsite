@@ -17,7 +17,7 @@ export const getAllOrders = (page, limit) => async (dispatch) => {
             payload: e.response,
         })
     }
-}
+};
 
 export const getOneOrders = (id) => async (dispatch) => {
     try {
